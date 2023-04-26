@@ -11,6 +11,10 @@ All you need to know
     + [****Interfaces (how do I connect to it)****](#interfaces-how-do-i-connect-to-it)
     + [****Capabilities (what can I do)****](#capabilities-what-can-i-do)
 
+![](https://cdn.sick.com/media/ZOOM/5/95/195/IM0039195.png)
+
+https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842
+
 <br>
 <br>
 <br>
@@ -135,10 +139,6 @@ All you need to know
 
 - Optical indicators	
     > 7-segment display (plus 5 LEDs showing device status, contamination warning and initial condition)
-
-![](https://cdn.sick.com/media/ZOOM/5/95/195/IM0039195.png)
-
-https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842
 
 ### Capabilities (what can I do)
 Be aware that any parameterization must be followed by a log out (Run) before it can be used (LMCstartmeas). Also, the manual states:
