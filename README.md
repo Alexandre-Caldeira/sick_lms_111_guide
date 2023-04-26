@@ -3,6 +3,15 @@ All you need to know
 
 [Sick LMS 111](https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842) is a 2D-LiDAR sensor, built by the german sensor company Sick AG. 
 
+- Index
+    + [****Features (what can I expect)****](#features-what-can-i-expect)
+    + [****Performance (how wrong does it get)****](#performance-how-wrong-does-it-get)
+    + [****Mechanics and electronics (how to feed it)****](#mechanics-and-electronics-how-to-feed-it)
+    + [****Interfaces (how do I connect to it)****](#interfaces-how-do-i-connect-to-it)
+    + [****Capabilities (what can I do)****](#capabilities-what-can-i-do)
+
+
+
 <!-- TODO: add dropdown, turn this into HTML github page -->
 ### Features (what can I expect)
 
@@ -125,7 +134,7 @@ All you need to know
 
 https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842
 
-## Capabilities (what can I do)
+### Capabilities (what can I do)
 Be aware that any parameterization must be followed by a log out (Run) before it can be used (LMCstartmeas). Also, the manual states:
 
 > "After changing the scanning frequency, there will be no data telegram or answer from the devices LMS1xx, LMS5xx and TiMxxx for up to 30 seconds. The same applies when the device is powering up or rebooting."
