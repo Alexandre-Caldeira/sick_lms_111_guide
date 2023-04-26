@@ -11,7 +11,12 @@ All you need to know
     + [****Interfaces (how do I connect to it)****](#interfaces-how-do-i-connect-to-it)
     + [****Capabilities (what can I do)****](#capabilities-what-can-i-do)
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!-- TODO: add dropdown, turn this into HTML github page -->
 ### Features (what can I expect)
