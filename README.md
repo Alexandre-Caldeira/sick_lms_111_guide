@@ -3,7 +3,7 @@ All you need to know
 
 [Sick LMS 111](https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842) is a 2D-LiDAR sensor, built by the german sensor company Sick AG. 
 
-- Index
+- # Index
     + [****Features (what can I expect)****](#features-what-can-i-expect)
     + [****Performance (how wrong does it get)****](#performance-how-wrong-does-it-get)
     + [****Mechanics and electronics (how to feed it)****](#mechanics-and-electronics-how-to-feed-it)
