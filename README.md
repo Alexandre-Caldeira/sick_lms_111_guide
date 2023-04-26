@@ -119,3 +119,22 @@ Optical indicators
 ![](https://cdn.sick.com/media/ZOOM/5/95/195/IM0039195.png)
 
 https://www.sick.com/br/en/lidar-sensors/2d-lidar-sensors/lms1xx/lms111-10100/p/p109842
+
+## Capabilities (what can I do)
+Be aware that any parameterization must be followed by a log out (Run) before it can be used (LMCstartmeas). Also, the manual states:
+
+> "After changing the scanning frequency, there will be no data telegram or answer from the devices LMS1xx, LMS5xx and TiMxxx for up to 30 seconds. The same applies when the device is powering up or rebooting."
+
+1. Log in:                       (sMN SetAccessMode)
+2. Set frequency and resolution: (sMN mLMPsetscancfg)
+3. Configure scandata content:   (sWN LMDscandatacfg)
+4. Configure scandata output:    (sWN LMPoutputRange)
+5. Store parameters: sMN mEEwriteall
+6. Set timestamp/data angle:     (sMN LSPsetdatetime)
+7. Log out: sMN Run 
+8. Request scan:
+    - poll one telegram:         (sRN LMDscandata)
+    - send data permanently:     (sEN LMDscandata)
+
+
+
