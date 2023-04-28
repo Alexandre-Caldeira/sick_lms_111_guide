@@ -26,7 +26,8 @@ fscanf(canal)
 %% 2. Set frequency and resolution: (sMN mLMPsetscancfg)
 % ATTENTION: Scan angle can not be changed here, only in the data output!This applies
 % for LMS1xx and LMS5xx series.
-    
+   
+% Example:
 % Scan frequency = 50 Hz
 % Sectors = 1 sector (This value is always 1 for these devices)
 % Angular resolution = 0,5°
@@ -39,14 +40,36 @@ fwrite(canal,[02,... % telegram start header for CoLa A
 fscanf(canal)
 
 %% 3. Configure scandata content:   (sWN LMDscandatacfg)
-
+% Configure the data content for the scan
 
 %% 4. Configure scandata output:    (sWN LMPoutputRange)
+% Configure measurement angle of the scandata for output
+% Example 1: output channel 1, no encoder and all scans
 
+% fwrite(canal,[02,... % telegram start header for CoLa A 
+%         'sWN LMDscandatacfg 01 00 1 1 0 00 00 0 0 0 0 +1',... 
+%         03]);  % telegram stop
+ 
+% fscanf(canal)
 
 %% 5. Store parameters: sMN mEEwriteall
+fwrite(canal,[02,... % telegram start header for CoLa A 
+            'sMN mEEwriteall',... 
+        03]);  % telegram stop
+    
+% Answer: sAN mEEwriteall 1, table on manual page 90
+fscanf(canal)
 
 
+%% 5.2 Read scandata outupt
+fwrite(canal,[02,... % telegram start header for CoLa A 
+            'sRN LMPoutputRange',... 
+        03]);  % telegram stop
+    
+% Answer: 
+fscanf(canal)
+
+% ex: <STX>sRA LMPoutputRange 1 1388 FFF92230 225510<ETX>
 
 %% 6. Set timestamp/data angle:     (sMN LSPsetdatetime)
 % The data format in the telegram is:
@@ -70,6 +93,13 @@ fscanf(canal)
 
 %% 7. Log out: sMN Run 
 
+fwrite(canal,[02,... % telegram start header for CoLa A 
+            'sMN Run',... 
+        03]);  % telegram stop
+    
+% Answer:  sAN Run 1
+fscanf(canal)
+
 
 %% CHECK: Read time stamp and status of the measurement function
 fwrite(canal,[02,... % telegram start header for CoLa A 
@@ -80,6 +110,15 @@ fwrite(canal,[02,... % telegram start header for CoLa A
 fscanf(canal)
 
 %Ex:  'sRA STlms 7 0 8 00:11:50 A 01.01.1970 0 0 0'
+
+% then, read output style
+fwrite(canal,[02,... % telegram start header for CoLa A 
+            'sRN LMPoutputRange',... 
+        03]);  % telegram stop
+    
+% Answer: 
+fscanf(canal)
+
 
 %% 8. Request scan:
 %     - poll one telegram:         (sRN LMDscandata)
